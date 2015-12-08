@@ -22,7 +22,7 @@ import tripAdvisor.QuestionList;
  *
  */
 
-public class StartTA implements Runnable {
+public class Start implements Runnable {
 
 	JFrame window = new JFrame();
 	private ButtonGroup group;
@@ -97,7 +97,7 @@ public class StartTA implements Runnable {
 	}
 
 	public static void main(String[] args) {
-		SwingUtilities.invokeLater(new StartTA());
+		SwingUtilities.invokeLater(new Start());
 	}
 
 }
