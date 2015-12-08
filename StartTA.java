@@ -86,6 +86,7 @@ public class StartTA implements Runnable {
 				nextQuestion();
 			}
 		});
+		
 
 		panel.add(button);
 
