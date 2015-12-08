@@ -29,6 +29,7 @@ public class Start implements Runnable {
 
 	@Override
 	public void run() {
+
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // make it go
 																// away on close
 		window.setVisible(true); // show the frame
