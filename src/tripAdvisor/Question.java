@@ -1,48 +1,22 @@
-
 package tripAdvisor;
 
-import java.util.ArrayList;
-
-/**
- *
- * @author Marianna Karm IA18A
- *
- */
+import java.util.Arrays;
+import java.util.List;
 
 public class Question {
-	private static int CURRENT_ID = 1;
-
-	private int id;
-	private String questionBody;
-	private ArrayList<String> answers;
-
-	public Question() {
-		this.id = CURRENT_ID;
-		CURRENT_ID++;
-		answers = new ArrayList<String>();
+	private String question;
+	private List<String> choices;
+	
+	public Question(String question, String ... strings) {
+		this.question = question;
+		this.choices = Arrays.asList(strings);
 	}
-
-	public ArrayList<String> getAnswers() {
-		return answers;
+	
+	public String getQuestion() {
+		return question;
 	}
-
-	public void setAnswers(ArrayList<String> answers) {
-		this.answers = answers;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getQuestionBody() {
-		return questionBody;
-	}
-
-	public void setQuestionBody(String questionBody) {
-		this.questionBody = questionBody;
+	
+	public List<String> getChoices() {
+		return choices;
 	}
 }
