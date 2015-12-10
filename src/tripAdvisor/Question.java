@@ -9,7 +9,7 @@ public class Question {
 	
 	public Question(String question, String ... strings) {
 		this.question = question;
-		this.choices = Arrays.asList(strings);
+		this.choices = Arrays.asList(strings); //creates a list of choices
 	}
 	
 	public String getQuestion() {
