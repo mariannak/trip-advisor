@@ -9,6 +9,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 import javax.swing.JOptionPane;
 
+
 // This class controls actions and saves user selections.
 // how to use queue - http://tutorials.jenkov.com/java-collections/queue.html. 
 // https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/LinkedBlockingQueue.html
@@ -18,7 +19,7 @@ public class WindowController {
 
 	private AdvisorWindow window;
 	private QuestionModel model;
-	private Queue<Question> unansweredQuestions;
+	private Queue<Question> unansweredQuestions; //ordered list of questions
 
 	public WindowController(AdvisorWindow window, QuestionModel model) {
 		this.window = window;
@@ -35,7 +36,19 @@ public class WindowController {
 			showQuestion(question);
 			return;
 		}
+		
 	}
+
+	private void showAnswersToQuestions() { //pop up window with the result
+		Map<Question, String> answers = model.getAnswers();
+		String resultString = "YOUR DESTINATION: work in progress...sorry :( \n \n";
+		for (Entry<Question, String> answer : answers.entrySet()) { // test if questions and answers are correct
+			resultString += answer.getKey().getQuestion() + " " + answer.getValue() + "\n";
+			
+		}
+		JOptionPane.showMessageDialog(null, resultString);
+	}
+	
 
 	public void showQuestion(Question question) {
 		QuestionScreen screen = new QuestionScreen(this, question);
@@ -50,6 +63,8 @@ public class WindowController {
 			showQuestion(question);
 			return;
 		}
+		
+		showAnswersToQuestions();
 
 	}
 

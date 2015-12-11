@@ -17,6 +17,7 @@ public class Question {
 	}
 	
 	public List<String> getChoices() {
+		
 		return choices;
 	}
 }
